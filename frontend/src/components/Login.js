@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 function Login({ setIsAuthenticated }) {
   const [formData, setFormData] = useState({
     email: '',
@@ -30,21 +31,19 @@ function Login({ setIsAuthenticated }) {
   };
 
   return (
-    <div>
+    <div className='base'>
       <div>
-        <div>
-          <h2>
-            Sign in
-          </h2>
-        </div>
         <form onSubmit={handleSubmit}>
           {error && (
             <div>
               {error}
             </div>
           )}
-          <div>
-            <div>
+          <div className='planner-app'>
+            <h2>
+              Sign In
+            </h2>
+            <div className='row'>
               <input
                 name="email"
                 type="email"
@@ -54,7 +53,7 @@ function Login({ setIsAuthenticated }) {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className='row'>
               <input
                 name="password"
                 type="password"
@@ -64,21 +63,17 @@ function Login({ setIsAuthenticated }) {
                 onChange={handleChange}
               />
             </div>
-          </div>
-
-          <div>
             <button
               type="submit"
             >
               Sign in
             </button>
-          </div>
-          
-          <div>
-            <Link to="/signup">
-              Don't have an account? Sign up
-            </Link>
-          </div>
+            <div className='sign-up-link'>
+              <Link to="/signup">
+                  Don't have an account? Sign up
+              </Link>
+            </div>
+          </div>  
         </form>
       </div>
     </div>

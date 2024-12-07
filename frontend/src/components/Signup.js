@@ -38,9 +38,6 @@ function Signup({ setIsAuthenticated }) {
     <div>
       <div>
         <div>
-          <h2>
-            Create your account
-          </h2>
         </div>
         <form onSubmit={handleSubmit}>
           {error && (
@@ -48,8 +45,11 @@ function Signup({ setIsAuthenticated }) {
               {error}
             </div>
           )}
-          <div>
-            <div>
+          <div className='planner-app'>
+            <h2>
+              Create your account
+            </h2>
+            <div className='row'>
               <input
                 name="username"
                 type="text"
@@ -59,7 +59,7 @@ function Signup({ setIsAuthenticated }) {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className='row'>
               <input
                 name="email"
                 type="email"
@@ -69,7 +69,7 @@ function Signup({ setIsAuthenticated }) {
                 onChange={handleChange}
               />
             </div>
-            <div>
+            <div className='row'>
               <input
                 name="password"
                 type="password"
@@ -79,20 +79,16 @@ function Signup({ setIsAuthenticated }) {
                 onChange={handleChange}
               />
             </div>
-          </div>
-
-          <div>
             <button
               type="submit"
             >
               Sign up
             </button>
-          </div>
-          
-          <div>
+            <div className='sign-up-link'>
             <Link to="/login">
               Already have an account? Sign in
             </Link>
+            </div>
           </div>
         </form>
       </div>
