@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import './Verification.css';
 
 function Login({ setIsAuthenticated }) {
   const [formData, setFormData] = useState({
